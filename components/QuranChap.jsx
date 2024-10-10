@@ -22,7 +22,7 @@ export default function QuranChap() {
 
   const fetchChapters = async () => {
     try {
-      const response = await fetch("http://api.alquran.cloud/v1/surah")
+      const response = await fetch("https://api.alquran.cloud/v1/surah")
       if (!response.ok) {
         throw new Error("Failed to fetch chapters")
       }
@@ -38,7 +38,7 @@ export default function QuranChap() {
   const fetchChapterContent = async (chapterNumber) => {
     setLoading(true)
     try {
-      const response = await fetch(`http://api.alquran.cloud/v1/surah/${chapterNumber}/en.asad`)
+      const response = await fetch(`https://api.alquran.cloud/v1/surah/${chapterNumber}/en.asad`)
       if (!response.ok) {
         throw new Error("Failed to fetch chapter content")
       }
@@ -96,7 +96,7 @@ export default function QuranChap() {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4 text-center">Quranic Chapters</h1>
+      <h1 className="text-2xl font-bold mb-4 text-center">The Holy Quran</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {chapters.map((chapter) => (
           <TooltipProvider key={chapter.number}>
